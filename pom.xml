@@ -29,24 +29,36 @@
        <scope>runtime</scope>
       </dependency>
   </dependencies>
-  
-  <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-dependency-plugin</artifactId>
-        <version>2.10</version>
-        <executions>
-          <execution>
-            <id>copy-dependencies</id>
-            <phase>package</phase>
-            <goals>
-              <goal>copy-dependencies</goal>
-            </goals>
-            <configuration>
-              <outputDirectory>${project.build.directory}/target/despliegue_temporal </outputDirectory>
-              <includeScope> deploy </includeScope> 
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-
+  <profiles>
+  <profile>
+    <id>Mi Id</id>
+    <activation>
+      <os>
+        <family>linux</family>
+      </os>
+    </activation>
+    <build> 
+        <plugins>
+            <plugin>
+                  <groupId>org.apache.maven.plugins</groupId>
+                  <artifactId>maven-dependency-plugin</artifactId>
+                  <version>2.10</version>
+                  <executions>
+                    <execution>
+                      <id>copy-dependencies</id>
+                      <phase>package</phase>
+                      <goals>
+                        <goal>copy-dependencies</goal>
+                      </goals>
+                      <configuration>
+                        <outputDirectory>${project.build.directory}/target/despliegue_temporal </outputDirectory>
+                        <includeScope> deploy </includeScope> 
+                      </configuration>
+                    </execution>
+                  </executions>
+              </plugin>
+        </plugins>
+    </build>
+    </profile>
+    </profiles>
 </project>
