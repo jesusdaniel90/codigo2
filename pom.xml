@@ -34,7 +34,7 @@
     <id>Mi Id</id>
     <activation>
       <os>
-        <family>linux</family>
+        <family>windows</family>
       </os>
     </activation>
     <build> 
@@ -46,7 +46,7 @@
                   <executions>
                     <execution>
                       <id>copy-dependencies</id>
-                      <phase>package</phase>
+                      <phase>deploy</phase>
                       <goals>
                         <goal>copy-dependencies</goal>
                       </goals>
