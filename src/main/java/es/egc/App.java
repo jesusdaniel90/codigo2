@@ -16,7 +16,7 @@ public class App
 	
 	public int suma(int a, int b){
 		int result= a-b;
-		log.info("Returning "+a+"+"+b+"="+result);
+		log.info("Returning 1");
 		return result;
 	}
 }
